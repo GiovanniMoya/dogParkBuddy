@@ -17,7 +17,8 @@ services:
       - database.env
     volumes:
       - database-data:/var/lib/postgresql/data/
-      # - ./sql/init.sql:/docker-entrypoint-initdb.d/1000.sql
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/1000.sql
+      - ./sql/testData.sql:/docker-entrypoint-initdb.d/9000.sql
     ports:
       - '5432:5432'
 volumes:
